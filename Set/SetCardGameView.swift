@@ -25,6 +25,7 @@ struct SetCardGameView: View {
         HStack{
             newGameButtonComponent
             Spacer()
+            dealCardsButtonComponent
         }
         .padding(.horizontal)
         .padding(.top, 10)
@@ -61,6 +62,15 @@ struct SetCardGameView: View {
     
     private var newGameButtonComponent: some View {
         Button("New Game"){
+            viewModel.resetGame()
+        }
+        .foregroundColor(.blue)
+        .font(.system(size: 18, weight: .semibold))
+    }
+    
+    private var dealCardsButtonComponent: some View {
+        Button("Deal +3 Cards"){
+            viewModel.deal()
         }
         .foregroundColor(.blue)
         .font(.system(size: 18, weight: .semibold))
@@ -118,7 +128,7 @@ struct SetCardGameView: View {
                         buildCard(for: card.content)
                             .aspectRatio(2/3, contentMode: .fit)
                             .foregroundColor(.blue)
-                            .padding(2)
+                            .padding(5)
                     }
                 }
             }

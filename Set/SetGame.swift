@@ -8,14 +8,24 @@
 import Foundation
 
 struct SetGame<CardContent> {
-    private(set) var cards: Array<Card>
+    private(set) var deck: Array<Card>
+    private(set) var cardsInPlay: [Card] // currently dealt cards
+
     
     init(numberOfCards: Int, cardContentFactory: (Int) -> CardContent) {
-        cards = []
+        deck = []
+        cardsInPlay = []
+        
         for index in 0..<numberOfCards {
             let content = cardContentFactory(index)
-            cards.append(Card(id: index, content: content))
+            deck.append(Card(id: index, content: content))
         }
+    }
+    
+    mutating func deal(_ count: Int){
+        let next = deck.prefix(count)
+        cardsInPlay.append(contentsOf: next)
+        deck.removeFirst(min(count, deck.count))
     }
     
     struct Card : Identifiable {

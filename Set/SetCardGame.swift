@@ -12,6 +12,7 @@ class SetCardGame: ObservableObject {
     
     init() {
         model = SetCardGame.createSetCardGame()
+        model.deal(12)
     }
     
     private static func createSetCardGame() -> SetGame<SetElement> {
@@ -27,13 +28,23 @@ class SetCardGame: ObservableObject {
             }
         }
         
-        return SetGame<SetElement>(numberOfCards: 81){
+        return SetGame<SetElement>(numberOfCards: shapes.count){
             index in shapes[index]
         }
     }
     
-    var cards: Array<SetGame<SetElement>.Card> {
-        return model.cards
+    var cards: [SetGame<SetElement>.Card] {
+        return model.cardsInPlay
+    }
+    
+    func resetGame(){
+        model = SetCardGame.createSetCardGame()
+        model.deal(12)
+    }
+    
+    // MARK - INTENTS
+    func deal() {
+        model.deal(3)
     }
 }
 
