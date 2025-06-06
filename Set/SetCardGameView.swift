@@ -13,9 +13,56 @@ struct SetCardGameView: View {
     
     var body: some View {
         VStack {
+            topNavBar
             cards
+            score
         }
         .padding()
+    }
+    
+    private var topNavBar: some View {
+        HStack{
+            newGameButtonComponent
+            Spacer()
+        }
+        .padding(.horizontal)
+        .padding(.top, 10)
+
+    }
+    
+    private var score: some View {
+        ZStack{
+            Spacer()
+            HStack{
+                Spacer()
+                Text("Score")
+                    .bold()
+                    .padding(.vertical, 20)
+                Spacer()
+                Spacer()
+                Text("")
+                    .frame(minWidth: 30)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 10)
+                    .background(.white)
+                    .clipShape(Capsule())
+                    .shadow(radius: 3)
+                Spacer()
+            }
+            .background(.ultraThinMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .shadow(radius: 10)
+            .padding(.horizontal, 30)
+            .padding(.bottom, 40)
+            .font(.title)
+            }
+    }
+    
+    private var newGameButtonComponent: some View {
+        Button("New Game"){
+        }
+        .foregroundColor(.blue)
+        .font(.system(size: 18, weight: .semibold))
     }
     
     private var cards: some View {
@@ -35,7 +82,7 @@ struct SetCardGameView: View {
         @ViewBuilder
         func shapeView(for type: SomeShape) -> some View {
             switch type {
-            case .circle: applyShading(to: Circle(), with: .blue)
+            case .circle: applyShading(to: Circle(), with: .red)
             case .rectangle: applyShading(to: Rectangle(), with: .green)
             case .capsule: applyShading(to: Capsule(), with: .purple)
             }
@@ -49,6 +96,8 @@ struct SetCardGameView: View {
             case .semi: AnyView(shape.fill(color.opacity(0.3)))
             }
         }
+        
+        
         
         var body: some View {
             ZStack {

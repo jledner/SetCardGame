@@ -27,7 +27,7 @@ class SetCardGame: ObservableObject {
             }
         }
         
-        return SetGame<SetElement>(numberOfCards: 20){
+        return SetGame<SetElement>(numberOfCards: 25){
             index in shapes[index]
         }
     }
