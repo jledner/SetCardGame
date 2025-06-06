@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		15FB2E292DF27232009DBBC9 /* SetCardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB2E252DF27232009DBBC9 /* SetCardGame.swift */; };
+		15FB2E2A2DF27232009DBBC9 /* SetCardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB2E262DF27232009DBBC9 /* SetCardGameView.swift */; };
+		15FB2E2B2DF27232009DBBC9 /* SetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB2E242DF27232009DBBC9 /* SetApp.swift */; };
+		15FB2E2C2DF27232009DBBC9 /* SomeShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB2E282DF27232009DBBC9 /* SomeShape.swift */; };
+		15FB2E2D2DF27232009DBBC9 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB2E272DF27232009DBBC9 /* SetGame.swift */; };
+		15FB2E2E2DF27232009DBBC9 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB2E232DF27232009DBBC9 /* AspectVGrid.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		15FB2DCD2DF252DC009DBBC9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,14 +36,15 @@
 		15FB2DBF2DF252DA009DBBC9 /* Set.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Set.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15FB2DCC2DF252DC009DBBC9 /* SetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15FB2DD62DF252DC009DBBC9 /* SetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		15FB2E232DF27232009DBBC9 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
+		15FB2E242DF27232009DBBC9 /* SetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetApp.swift; sourceTree = "<group>"; };
+		15FB2E252DF27232009DBBC9 /* SetCardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardGame.swift; sourceTree = "<group>"; };
+		15FB2E262DF27232009DBBC9 /* SetCardGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardGameView.swift; sourceTree = "<group>"; };
+		15FB2E272DF27232009DBBC9 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
+		15FB2E282DF27232009DBBC9 /* SomeShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		15FB2DC12DF252DA009DBBC9 /* Set */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Set;
-			sourceTree = "<group>";
-		};
 		15FB2DCF2DF252DC009DBBC9 /* SetTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SetTests;
@@ -75,7 +85,7 @@
 		15FB2DB62DF252DA009DBBC9 = {
 			isa = PBXGroup;
 			children = (
-				15FB2DC12DF252DA009DBBC9 /* Set */,
+				15FB2E1C2DF270CE009DBBC9 /* Set */,
 				15FB2DCF2DF252DC009DBBC9 /* SetTests */,
 				15FB2DD92DF252DC009DBBC9 /* SetUITests */,
 				15FB2DC02DF252DA009DBBC9 /* Products */,
@@ -92,6 +102,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		15FB2E1C2DF270CE009DBBC9 /* Set */ = {
+			isa = PBXGroup;
+			children = (
+				15FB2E232DF27232009DBBC9 /* AspectVGrid.swift */,
+				15FB2E242DF27232009DBBC9 /* SetApp.swift */,
+				15FB2E252DF27232009DBBC9 /* SetCardGame.swift */,
+				15FB2E262DF27232009DBBC9 /* SetCardGameView.swift */,
+				15FB2E272DF27232009DBBC9 /* SetGame.swift */,
+				15FB2E282DF27232009DBBC9 /* SomeShape.swift */,
+			);
+			path = Set;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +129,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				15FB2DC12DF252DA009DBBC9 /* Set */,
 			);
 			name = Set;
 			packageProductDependencies = (
@@ -175,6 +195,7 @@
 				TargetAttributes = {
 					15FB2DBE2DF252DA009DBBC9 = {
 						CreatedOnToolsVersion = 16.3;
+						LastSwiftMigration = 1630;
 					};
 					15FB2DCB2DF252DC009DBBC9 = {
 						CreatedOnToolsVersion = 16.3;
@@ -236,6 +257,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15FB2E292DF27232009DBBC9 /* SetCardGame.swift in Sources */,
+				15FB2E2A2DF27232009DBBC9 /* SetCardGameView.swift in Sources */,
+				15FB2E2B2DF27232009DBBC9 /* SetApp.swift in Sources */,
+				15FB2E2C2DF27232009DBBC9 /* SomeShape.swift in Sources */,
+				15FB2E2D2DF27232009DBBC9 /* SetGame.swift in Sources */,
+				15FB2E2E2DF27232009DBBC9 /* AspectVGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +422,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H728QWZ6SA;
@@ -413,6 +441,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = JakeAR.Set;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -423,6 +452,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H728QWZ6SA;
