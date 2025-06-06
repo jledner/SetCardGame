@@ -26,18 +26,27 @@ struct SetCardGameView: View {
     }
 
     struct CardView: View {
-        let card: SetGame<SomeShape>.Card
+        let card: SetGame<SetElement>.Card
         
-        init(_ card: SetGame<SomeShape>.Card) {
+        init(_ card: SetGame<SetElement>.Card) {
             self.card = card
         }
         
         @ViewBuilder
         func shapeView(for type: SomeShape) -> some View {
             switch type {
-            case .circle: Circle()
-            case .rectangle: Rectangle()
-            case .ellipse: Ellipse()
+            case .circle: applyShading(to: Circle())
+            case .rectangle: applyShading(to: Rectangle())
+            case .ellipse: applyShading(to: Ellipse())
+            }
+        }
+        
+        @ViewBuilder
+        func applyShading(to shape: some Shape) -> some View {
+            switch card.content.fill {
+            case .solid: shape.fill(Color.blue)
+            case .open: shape.stroke(Color.blue, lineWidth: 8)
+            case .semi: shape.fill(Color.blue.opacity(0.3))
             }
         }
         
@@ -47,10 +56,10 @@ struct SetCardGameView: View {
                 Group {
                     base.fill(.white)
                     base.strokeBorder(lineWidth: 2)
-                    shapeView(for: card.content)
-                        .minimumScaleFactor(0.01)
-                        .aspectRatio(1/2, contentMode: .fit)
+                    shapeView(for: card.content.shape)
+                        .aspectRatio(2/3, contentMode: .fit)
                         .foregroundColor(.blue)
+                        .padding(30)
                 }
             }
         }

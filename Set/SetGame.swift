@@ -10,9 +10,9 @@ import Foundation
 struct SetGame<CardContent> {
     private(set) var cards: Array<Card>
     
-    init(cardContentFactory: (Int) -> CardContent) {
+    init(numberOfCards: Int, cardContentFactory: (Int) -> CardContent) {
         cards = []
-        for index in 0..<5 {
+        for index in 0..<numberOfCards {
             let content = cardContentFactory(index)
             cards.append(Card(id: index, content: content))
         }
@@ -22,12 +22,5 @@ struct SetGame<CardContent> {
         var id: Int
         var isInSet = false
         let content: CardContent
-    }
-    
-    struct Shape {
-        var name: String
-        var fill: String
-        var numShapes: Int
-        var color: String
     }
 }

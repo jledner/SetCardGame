@@ -10,9 +10,10 @@
 		15FB2E292DF27232009DBBC9 /* SetCardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB2E252DF27232009DBBC9 /* SetCardGame.swift */; };
 		15FB2E2A2DF27232009DBBC9 /* SetCardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB2E262DF27232009DBBC9 /* SetCardGameView.swift */; };
 		15FB2E2B2DF27232009DBBC9 /* SetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB2E242DF27232009DBBC9 /* SetApp.swift */; };
-		15FB2E2C2DF27232009DBBC9 /* SomeShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB2E282DF27232009DBBC9 /* SomeShape.swift */; };
+		15FB2E2C2DF27232009DBBC9 /* Tribool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB2E282DF27232009DBBC9 /* Tribool.swift */; };
 		15FB2E2D2DF27232009DBBC9 /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB2E272DF27232009DBBC9 /* SetGame.swift */; };
 		15FB2E2E2DF27232009DBBC9 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB2E232DF27232009DBBC9 /* AspectVGrid.swift */; };
+		15FB2E302DF2A7C7009DBBC9 /* SetElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FB2E2F2DF2A7C4009DBBC9 /* SetElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,8 @@
 		15FB2E252DF27232009DBBC9 /* SetCardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardGame.swift; sourceTree = "<group>"; };
 		15FB2E262DF27232009DBBC9 /* SetCardGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardGameView.swift; sourceTree = "<group>"; };
 		15FB2E272DF27232009DBBC9 /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
-		15FB2E282DF27232009DBBC9 /* SomeShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeShape.swift; sourceTree = "<group>"; };
+		15FB2E282DF27232009DBBC9 /* Tribool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tribool.swift; sourceTree = "<group>"; };
+		15FB2E2F2DF2A7C4009DBBC9 /* SetElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -110,7 +112,8 @@
 				15FB2E252DF27232009DBBC9 /* SetCardGame.swift */,
 				15FB2E262DF27232009DBBC9 /* SetCardGameView.swift */,
 				15FB2E272DF27232009DBBC9 /* SetGame.swift */,
-				15FB2E282DF27232009DBBC9 /* SomeShape.swift */,
+				15FB2E282DF27232009DBBC9 /* Tribool.swift */,
+				15FB2E2F2DF2A7C4009DBBC9 /* SetElement.swift */,
 			);
 			path = Set;
 			sourceTree = "<group>";
@@ -257,10 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15FB2E302DF2A7C7009DBBC9 /* SetElement.swift in Sources */,
 				15FB2E292DF27232009DBBC9 /* SetCardGame.swift in Sources */,
 				15FB2E2A2DF27232009DBBC9 /* SetCardGameView.swift in Sources */,
 				15FB2E2B2DF27232009DBBC9 /* SetApp.swift in Sources */,
-				15FB2E2C2DF27232009DBBC9 /* SomeShape.swift in Sources */,
+				15FB2E2C2DF27232009DBBC9 /* Tribool.swift in Sources */,
 				15FB2E2D2DF27232009DBBC9 /* SetGame.swift in Sources */,
 				15FB2E2E2DF27232009DBBC9 /* AspectVGrid.swift in Sources */,
 			);
