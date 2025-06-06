@@ -10,16 +10,24 @@ import SwiftUI
 class SetCardGame: ObservableObject {
     @Published private var model: SetGame<SetElement>
     
-    
-    private(set) var shapes = [ SetElement(shape: .circle, fill: .semi, number: .three, color: .red), SetElement(shape: .rectangle, fill: .open, number: .three, color: .red), SetElement(shape: .ellipse, fill: .solid, number: .three, color: .red) ]
-    
-    
     init() {
-        model = SetCardGame.createSetCardGame(for: shapes)
+        model = SetCardGame.createSetCardGame()
     }
     
-    private static func createSetCardGame(for shapes: [SetElement]) -> SetGame<SetElement> {
-        SetGame<SetElement>(numberOfCards: shapes.count){
+    private static func createSetCardGame() -> SetGame<SetElement> {
+        var shapes: [SetElement] = []
+        
+        SomeNum.allCases.forEach { number in
+            SomeFill.allCases.forEach { fill in
+                SomeShape.allCases.forEach { shape in
+                    SomeColor.allCases.forEach { color in
+                        shapes.append(SetElement(shape: shape, fill: fill, number: number, color: color))
+                    }
+                }
+            }
+        }
+        
+        return SetGame<SetElement>(numberOfCards: 20){
             index in shapes[index]
         }
     }

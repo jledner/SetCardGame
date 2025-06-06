@@ -35,18 +35,18 @@ struct SetCardGameView: View {
         @ViewBuilder
         func shapeView(for type: SomeShape) -> some View {
             switch type {
-            case .circle: applyShading(to: Circle())
-            case .rectangle: applyShading(to: Rectangle())
-            case .ellipse: applyShading(to: Ellipse())
+            case .circle: applyShading(to: Circle(), with: .blue)
+            case .rectangle: applyShading(to: Rectangle(), with: .green)
+            case .capsule: applyShading(to: Capsule(), with: .purple)
             }
         }
         
         @ViewBuilder
-        func applyShading(to shape: some Shape) -> some View {
+        func applyShading(to shape: some Shape, with color: Color) -> some View {
             switch card.content.fill {
-            case .solid: shape.fill(Color.blue)
-            case .open: shape.stroke(Color.blue, lineWidth: 8)
-            case .semi: shape.fill(Color.blue.opacity(0.3))
+            case .solid: AnyView(shape.fill(color))
+            case .open: AnyView(shape.stroke(color, lineWidth: 4))
+            case .semi: AnyView(shape.fill(color.opacity(0.3)))
             }
         }
         
@@ -59,7 +59,7 @@ struct SetCardGameView: View {
                     shapeView(for: card.content.shape)
                         .aspectRatio(2/3, contentMode: .fit)
                         .foregroundColor(.blue)
-                        .padding(30)
+                        .padding(20)
                 }
             }
         }

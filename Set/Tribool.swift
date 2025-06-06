@@ -6,7 +6,7 @@
 //
 
 enum SomeShape: CaseIterable, Equatable {
-    case circle, rectangle, ellipse
+    case circle, rectangle, capsule
 }
 
 enum SomeFill: CaseIterable, Equatable {
