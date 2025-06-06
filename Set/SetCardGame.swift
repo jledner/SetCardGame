@@ -27,12 +27,32 @@ class SetCardGame: ObservableObject {
             }
         }
         
-        return SetGame<SetElement>(numberOfCards: 25){
+        return SetGame<SetElement>(numberOfCards: 81){
             index in shapes[index]
         }
     }
     
     var cards: Array<SetGame<SetElement>.Card> {
         return model.cards
+    }
+}
+
+extension SetElement {
+    var colorProperty: Color {
+        switch color {
+        case .red: Color.red
+        case .green: Color.green
+        case .purple: Color.purple
+        }
+    }
+}
+
+extension SetElement {
+    var shapeProperty: any Shape {
+        switch shape {
+        case .circle: Circle()
+        case .rectangle: Rectangle()
+        case .capsule: Capsule()
+        }
     }
 }

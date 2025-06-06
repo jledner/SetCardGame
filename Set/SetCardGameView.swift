@@ -12,9 +12,10 @@ struct SetCardGameView: View {
     private let aspectRatio: CGFloat = 2/3
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             topNavBar
             cards
+                .layoutPriority(1)
             score
         }
         .padding()
@@ -31,13 +32,13 @@ struct SetCardGameView: View {
     }
     
     private var score: some View {
-        ZStack{
+        VStack{
             Spacer()
             HStack{
                 Spacer()
                 Text("Score")
                     .bold()
-                    .padding(.vertical, 20)
+                    .padding(.vertical, 15)
                 Spacer()
                 Spacer()
                 Text("")
@@ -53,7 +54,7 @@ struct SetCardGameView: View {
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .shadow(radius: 10)
             .padding(.horizontal, 30)
-            .padding(.bottom, 40)
+            .padding(.bottom, 10)
             .font(.title)
             }
     }
@@ -79,17 +80,13 @@ struct SetCardGameView: View {
             self.card = card
         }
         
+
         @ViewBuilder
-        func shapeView(for type: SomeShape) -> some View {
-            switch type {
-            case .circle: applyShading(to: Circle(), with: .red)
-            case .rectangle: applyShading(to: Rectangle(), with: .green)
-            case .capsule: applyShading(to: Capsule(), with: .purple)
-            }
+        func buildCard(for element: SetElement) -> some View {
+            duplicateShape(copy: applyShading(to: element.shapeProperty, with: element.colorProperty), for: element.number)
         }
         
-        @ViewBuilder
-        func applyShading(to shape: some Shape, with color: Color) -> some View {
+        func applyShading(to shape: some Shape, with color: Color) -> AnyView {
             switch card.content.fill {
             case .solid: AnyView(shape.fill(color))
             case .open: AnyView(shape.stroke(color, lineWidth: 4))
@@ -97,6 +94,18 @@ struct SetCardGameView: View {
             }
         }
         
+        func duplicateShape(copy view: AnyView, for num: SomeNum) -> AnyView {
+            switch num {
+            case .one:
+                AnyView(VStack { view })
+            
+            case .two:
+                AnyView(VStack {view; view})
+            
+            case .three:
+                AnyView(VStack {view; view; view})
+            }
+        }
         
         
         var body: some View {
@@ -105,10 +114,12 @@ struct SetCardGameView: View {
                 Group {
                     base.fill(.white)
                     base.strokeBorder(lineWidth: 2)
-                    shapeView(for: card.content.shape)
-                        .aspectRatio(2/3, contentMode: .fit)
-                        .foregroundColor(.blue)
-                        .padding(20)
+                    VStack{
+                        buildCard(for: card.content)
+                            .aspectRatio(2/3, contentMode: .fit)
+                            .foregroundColor(.blue)
+                            .padding(2)
+                    }
                 }
             }
         }
