@@ -69,6 +69,7 @@ extension SetGame where CardContent == SetElement {
             print(givenCard.content.shape)
             if givenCard.content.shape == referenceShape {
                 cardsInPlay.removeAll { $0.id == givenCard.id }
+                selectedCards = []
             }
         }
     }
