@@ -80,6 +80,9 @@ struct SetCardGameView: View {
         AspectVGrid(viewModel.cards, aspectRatio: aspectRatio){ card in
             CardView(card)
                 .padding(4)
+                .onTapGesture {
+                    viewModel.choose(with: card)
+                }
         }
     }
 
@@ -121,6 +124,7 @@ struct SetCardGameView: View {
         var body: some View {
             ZStack {
                 let base = RoundedRectangle(cornerRadius: 12)
+                    .stroke(card.isSelected ? .yellow : .clear, lineWidth: 4)
                 Group {
                     base.fill(.white)
                     base.strokeBorder(lineWidth: 2)

@@ -37,6 +37,10 @@ class SetCardGame: ObservableObject {
         return model.cardsInPlay
     }
     
+    func choose(with card: SetGame<SetElement>.Card) {
+        model.choose(with: card)
+    }
+    
     func resetGame(){
         model = SetCardGame.createSetCardGame()
         model.deal(12)

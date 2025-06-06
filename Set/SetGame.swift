@@ -22,6 +22,13 @@ struct SetGame<CardContent> {
         }
     }
     
+    mutating func choose(with card: Card){
+        if let chosenIndex = cardsInPlay.firstIndex(where: { $0.id == card.id
+        }) {
+            cardsInPlay[chosenIndex].isSelected.toggle()
+        }
+    }
+    
     mutating func deal(_ count: Int){
         let next = deck.prefix(count)
         cardsInPlay.append(contentsOf: next)
@@ -30,7 +37,7 @@ struct SetGame<CardContent> {
     
     struct Card : Identifiable {
         var id: Int
-        var isInSet = false
+        var isSelected = false
         let content: CardContent
     }
 }
